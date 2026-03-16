@@ -30,12 +30,13 @@ const AnimatedCounter = ({ target, suffix = "", label }: { target: number; suffi
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="text-center"
+      whileHover={{ y: -8, rotateX: 10, rotateY: -10 }}
+      className="text-center glass-card glass-card-hover tilt-card spotlight-card rounded-3xl px-4 py-8"
     >
-      <div className="text-4xl md:text-6xl font-extrabold gradient-text mb-2">
+      <div className="text-4xl md:text-6xl font-extrabold gradient-text mb-2 tilt-layer">
         {count}{suffix}
       </div>
-      <div className="text-muted-foreground font-medium">{label}</div>
+      <div className="text-muted-foreground font-medium tilt-layer">{label}</div>
     </motion.div>
   );
 };

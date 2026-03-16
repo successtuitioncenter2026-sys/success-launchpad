@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/button";
 const courses = [
   {
     icon: BookOpen,
-    title: "Class 6–8 Foundation",
+    title: "Class 6-8 Foundation",
     desc: "Strong basics in Mathematics and Science. Build a rock-solid academic foundation for the future.",
     subjects: ["Mathematics", "Science"],
   },
   {
     icon: GraduationCap,
-    title: "Class 9–10 Board Prep",
+    title: "Class 9-10 Board Prep",
     desc: "Concept mastery + exam strategies + model tests. Achieve top scores in your board exams.",
     subjects: ["Mathematics", "Physics", "Chemistry", "Biology"],
   },
   {
     icon: Atom,
-    title: "Class 11–12 Advanced",
+    title: "Class 11-12 Advanced",
     desc: "Deep subject understanding for higher secondary exams. Expert coaching for competitive readiness.",
     subjects: ["Mathematics", "Physics", "Chemistry", "Biology", "Commerce"],
   },
@@ -35,18 +35,20 @@ const CoursesSection = () => (
       <div className="grid md:grid-cols-3 gap-8">
         {courses.map((c, i) => (
           <ScrollReveal key={c.title} delay={i * 0.15}>
-            <div className="glass-card glass-card-hover rounded-2xl p-8 h-full flex flex-col">
-              <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mb-6 animate-pulse-glow">
+            <div className="glass-card glass-card-hover tilt-card spotlight-card rounded-2xl p-8 h-full flex flex-col">
+              <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mb-6 animate-pulse-glow tilt-layer">
                 <c.icon className="h-8 w-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{c.title}</h3>
-              <p className="text-muted-foreground mb-5 flex-1">{c.desc}</p>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <h3 className="text-xl font-bold mb-3 text-foreground tilt-layer">{c.title}</h3>
+              <p className="text-muted-foreground mb-5 flex-1 tilt-layer">{c.desc}</p>
+              <div className="flex flex-wrap gap-2 mb-6 tilt-layer">
                 {c.subjects.map((s) => (
-                  <span key={s} className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary">{s}</span>
+                  <span key={s} className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary hover-lift">
+                    {s}
+                  </span>
                 ))}
               </div>
-              <Button variant="gradient" className="w-full" asChild>
+              <Button variant="gradient" className="w-full shine-on-hover hover-lift tilt-layer" asChild>
                 <a href="#demo">Learn More</a>
               </Button>
             </div>

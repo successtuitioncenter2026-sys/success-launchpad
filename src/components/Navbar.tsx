@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/success tution logobanner.png";
 
 const links = [
   { label: "About", href: "#about" },
@@ -23,20 +24,27 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-card"
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#" className="font-display text-xl font-extrabold gradient-text">
-          Success Tuition
+        <a href="#" className="flex items-center gap-3 hover-lift">
+          <img src={logo} alt="Success Tuition Center logo" className="h-12 w-auto object-contain animate-float-gentle" />
+          <span className="font-display text-xl font-extrabold gradient-text">
+            Success Tuition
+          </span>
         </a>
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-0.5"
+            >
               {l.label}
             </a>
           ))}
-          <Button variant="cta" size="sm" asChild>
+          <Button variant="cta" size="sm" className="shine-on-hover hover-lift" asChild>
             <a href="#demo">Enroll Now</a>
           </Button>
         </div>
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="md:hidden hover-lift" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -50,11 +58,16 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-3 p-4">
               {links.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300"
+                >
                   {l.label}
                 </a>
               ))}
-              <Button variant="cta" size="sm" asChild>
+              <Button variant="cta" size="sm" className="shine-on-hover" asChild>
                 <a href="#demo" onClick={() => setOpen(false)}>Enroll Now</a>
               </Button>
             </div>

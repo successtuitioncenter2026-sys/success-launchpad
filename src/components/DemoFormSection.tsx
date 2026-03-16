@@ -4,12 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
+const whatsappNumber = "918807747582";
+
 const DemoFormSection = () => {
   const [form, setForm] = useState({ name: "", classLevel: "", phone: "", subject: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll contact you shortly to schedule your free demo class.");
+
+    const message = [
+      "New Free Demo Class Request",
+      "",
+      `Student Name: ${form.name}`,
+      `Class: ${form.classLevel}`,
+      `Phone Number: ${form.phone}`,
+      `Subject Interested: ${form.subject}`,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    toast.success("WhatsApp opened with the demo class details.");
     setForm({ name: "", classLevel: "", phone: "", subject: "" });
   };
 

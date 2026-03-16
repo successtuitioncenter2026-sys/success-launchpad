@@ -2,7 +2,7 @@ import AnimatedCounter from "./AnimatedCounter";
 import ScrollReveal from "./ScrollReveal";
 
 const stats = [
-  { target: 500, suffix: "+", label: "Students Trained" },
+  { target: 200, suffix: "+", label: "Students Trained" },
   { target: 95, suffix: "%", label: "Board Exam Success Rate" },
   { target: 10, suffix: "+", label: "Years Teaching Experience" },
   { target: 100, suffix: "+", label: "Top Scorers" },
