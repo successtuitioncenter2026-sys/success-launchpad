@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
+import { BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import FloatingElements from "./FloatingElements";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
     <div className="absolute inset-0 hero-grid opacity-60" />
     <div className="absolute top-20 left-[-6rem] w-72 h-72 rounded-full bg-primary/20 blur-3xl animate-pulse-orbit" />
     <div className="absolute bottom-16 right-[-4rem] w-80 h-80 rounded-full bg-accent/20 blur-3xl animate-float-gentle" />
-    <FloatingElements />
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <BookOpen className="h-[28rem] w-[28rem] sm:h-[36rem] sm:w-[36rem] md:h-[46rem] md:w-[46rem] text-primary/[0.14]" strokeWidth={1.2} />
+    </div>
     <div className="container mx-auto px-4 text-center relative z-10 pt-20">
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
-        className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6"
+        className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6 font-outfit-bold"
       >
         Success Tuition Center <span className="gradient-text">Katpadi Vellore</span>
       </motion.h1>
@@ -44,16 +46,16 @@ const HeroSection = () => (
         transition={{ delay: 0.55, duration: 0.7 }}
         className="mt-14 max-w-4xl mx-auto"
       >
-        <div className="glass-card tilt-card spotlight-card rounded-[2rem] p-6 md:p-8">
+        <div className="poster-card tilt-card spotlight-card rounded-[2rem] p-6 md:p-8 text-white border border-white/15">
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               { value: "6-12", label: "Focused school classes" },
               { value: "Katpadi", label: "Local tuition support" },
               { value: "95%", label: "Board exam success" },
             ].map((item) => (
-              <div key={item.label} className="tilt-layer rounded-2xl bg-white/45 px-5 py-6">
-                <p className="text-3xl md:text-4xl font-extrabold gradient-text">{item.value}</p>
-                <p className="mt-2 text-sm md:text-base text-muted-foreground">{item.label}</p>
+              <div key={item.label} className="tilt-layer rounded-2xl bg-white/10 px-5 py-6 backdrop-blur-sm border border-white/10">
+                <p className="text-3xl md:text-4xl font-extrabold gradient-text-accent font-outfit-bold">{item.value}</p>
+                <p className="mt-2 text-sm md:text-base text-white/85">{item.label}</p>
               </div>
             ))}
           </div>

@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        body: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Outfit", "sans-serif"],
+        body: ["Outfit", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -89,8 +89,8 @@ export default {
           "50%": { transform: "translateY(10px) rotate(-3deg)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(239 84% 67% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(271 81% 65% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 24px hsl(205 79% 42% / 0.24)" },
+          "50%": { boxShadow: "0 0 44px hsl(41 100% 54% / 0.36)" },
         },
       },
       animation: {

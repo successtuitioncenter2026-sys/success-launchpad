@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
-const whatsappNumber = "918807747582";
+const whatsappNumber = "918344810357";
 
 const DemoFormSection = () => {
   const [form, setForm] = useState({ name: "", classLevel: "", phone: "", subject: "" });

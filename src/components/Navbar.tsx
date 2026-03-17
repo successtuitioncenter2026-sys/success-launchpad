@@ -25,10 +25,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#" className="flex items-center gap-3 hover-lift">
-          <img src={logo} alt="Success Tuition Center logo" className="h-12 w-auto object-contain animate-float-gentle" />
-          <span className="font-display text-xl font-extrabold gradient-text">
-            Success Tuition
-          </span>
+          <img src={logo} alt="Success Tuition Center logo" className="h-12 w-auto object-contain" />
+          
         </a>
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (

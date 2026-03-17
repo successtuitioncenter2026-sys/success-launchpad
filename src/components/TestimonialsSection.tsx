@@ -78,8 +78,7 @@ const getInitials = (name: string) =>
     .map((part) => part[0]?.toUpperCase())
     .join("");
 
-const TestimonialsSection = () => {
-  return (
+const TestimonialsSection = () => (
     <section id="testimonials" className="py-24 section-alt">
       <div className="container mx-auto px-4">
         <ScrollReveal>
@@ -96,7 +95,7 @@ const TestimonialsSection = () => {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {reviews.map((review, index) => (
             <ScrollReveal key={`${review.name}-${index}`}>
-              <article className="glass-card rounded-3xl p-6 h-full flex flex-col">
+              <article className="group glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
                     {getInitials(review.name)}
@@ -114,14 +113,15 @@ const TestimonialsSection = () => {
                   <span className="ml-2 text-sm text-muted-foreground">{review.timeAgo}</span>
                 </div>
 
-                <p className="mt-5 text-foreground leading-relaxed">{review.text}</p>
+                <div className="mt-0 max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-60 group-hover:opacity-100">
+                  <p className="text-foreground leading-relaxed">{review.text}</p>
+                </div>
               </article>
             </ScrollReveal>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+);
 
 export default TestimonialsSection;
