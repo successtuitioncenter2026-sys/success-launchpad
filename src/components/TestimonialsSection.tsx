@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { Star } from "lucide-react";
 
@@ -78,8 +79,17 @@ const getInitials = (name: string) =>
     .map((part) => part[0]?.toUpperCase())
     .join("");
 
-const TestimonialsSection = () => (
-    <section id="testimonials" className="py-24 section-alt">
+const TestimonialsSection = () => {
+  const [expandedReviews, setExpandedReviews] = useState<number[]>([]);
+
+  const toggleReview = (index: number) => {
+    setExpandedReviews((current) =>
+      current.includes(index) ? current.filter((item) => item !== index) : [...current, index],
+    );
+  };
+
+  return (
+    <section id="testimonials" className="bg-white py-24">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -93,35 +103,52 @@ const TestimonialsSection = () => (
         </ScrollReveal>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {reviews.map((review, index) => (
-            <ScrollReveal key={`${review.name}-${index}`}>
-              <article className="group glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
-                    {getInitials(review.name)}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-lg leading-tight">{review.name}</h3>
-                    <p className="text-sm text-muted-foreground">{review.meta}</p>
-                  </div>
-                </div>
+          {reviews.map((review, index) => {
+            const isExpanded = expandedReviews.includes(index);
+            const shouldTruncate = review.text.length > 70;
 
-                <div className="flex items-center gap-1 mt-5">
-                  {Array.from({ length: 5 }).map((_, starIndex) => (
-                    <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                  <span className="ml-2 text-sm text-muted-foreground">{review.timeAgo}</span>
-                </div>
+            return (
+              <ScrollReveal key={`${review.name}-${index}`}>
+                <article className="glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
+                      {getInitials(review.name)}
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-lg leading-tight">{review.name}</h3>
+                      <p className="text-sm text-muted-foreground">{review.meta}</p>
+                    </div>
+                  </div>
 
-                <div className="mt-0 max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-60 group-hover:opacity-100">
-                  <p className="text-foreground leading-relaxed">{review.text}</p>
-                </div>
-              </article>
-            </ScrollReveal>
-          ))}
+                  <div className="flex items-center gap-1 mt-5">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                    <span className="ml-2 text-sm text-muted-foreground">{review.timeAgo}</span>
+                  </div>
+
+                  <div className="mt-5">
+                    <p className={isExpanded ? "text-foreground leading-relaxed" : "truncate text-foreground leading-relaxed"}>
+                      {review.text}
+                    </p>
+                    {shouldTruncate ? (
+                      <button
+                        type="button"
+                        onClick={() => toggleReview(index)}
+                        className="mt-3 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                      >
+                        {isExpanded ? "Show less" : "Show more"}
+                      </button>
+                    ) : null}
+                  </div>
+                </article>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
-);
+  );
+};
 
 export default TestimonialsSection;

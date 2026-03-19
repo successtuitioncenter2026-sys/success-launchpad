@@ -22,8 +22,8 @@ const WhySucceedSection = () => (
         {items.map((item, i) => (
           <ScrollReveal key={item.title} delay={i * 0.1}>
             <div className="glass-card glass-card-hover rounded-2xl p-7 flex gap-5 items-start">
-              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shrink-0">
-                <item.icon className="h-6 w-6 text-primary-foreground" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+                <item.icon className="h-6 w-6 text-primary" />
               </div>
               <div>
                 <h3 className="font-bold text-foreground mb-1">{item.title}</h3>

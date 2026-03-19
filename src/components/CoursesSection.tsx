@@ -36,8 +36,8 @@ const CoursesSection = () => (
         {courses.map((c, i) => (
           <ScrollReveal key={c.title} delay={i * 0.15}>
             <div className="glass-card glass-card-hover tilt-card spotlight-card rounded-2xl p-8 h-full flex flex-col">
-              <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mb-6 animate-pulse-glow tilt-layer">
-                <c.icon className="h-8 w-8 text-primary-foreground" />
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 tilt-layer">
+                <c.icon className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-foreground tilt-layer">{c.title}</h3>
               <p className="text-muted-foreground mb-5 flex-1 tilt-layer">{c.desc}</p>

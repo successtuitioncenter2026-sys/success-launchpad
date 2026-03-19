@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Facebook, Instagram, Menu, MessageCircle, Phone, X } from "lucide-react";
 import logo from "@/assets/success tution logobanner.png";
 
 const links = [
@@ -10,7 +10,6 @@ const links = [
   { label: "Results", href: "#results" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -45,6 +44,48 @@ const Navbar = () => {
         <button className="md:hidden hover-lift" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+      </div>
+      <div className="border-t border-border/70 bg-slate-900/80 text-white backdrop-blur-sm">
+        <div className="container mx-auto flex flex-col gap-3 px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href="tel:+918807747582"
+              className="flex items-center gap-2 transition-colors hover:text-[#ffd166]"
+            >
+              <Phone className="h-4 w-4" />
+              <span>+91 88077 47582</span>
+            </a>
+            <a
+              href="https://wa.me/918344810357"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 transition-colors hover:text-[#ffd166]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span>+91 83448 10357</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=61579514131708"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 transition-colors hover:border-[#ffd166] hover:text-[#ffd166]"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/success_tuition_center_katpadi?igsh=OHh5Z3Bpam1sd2Ix"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 transition-colors hover:border-[#ffd166] hover:text-[#ffd166]"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
       <AnimatePresence>
         {open && (

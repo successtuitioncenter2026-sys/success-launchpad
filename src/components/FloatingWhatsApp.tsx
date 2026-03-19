@@ -4,9 +4,8 @@ const FloatingWhatsApp = () => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat on WhatsApp"
-    className="fixed bottom-5 right-5 z-[105] flex items-center gap-3 rounded-full bg-white/95 px-3 py-3 shadow-[0_18px_45px_rgba(15,104,61,0.24)] backdrop-blur-sm transition-transform duration-300 hover:scale-105"
+    className="fixed bottom-5 right-5 z-[105] transition-transform duration-300 hover:scale-105"
   >
-    <span className="hidden text-sm font-semibold text-[#128C4A] sm:block">83448 10357</span>
     <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#4ade5a] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)]">
       <svg viewBox="0 0 32 32" className="h-8 w-8 fill-white" aria-hidden="true">
         <path d="M19.11 17.21c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.62.14-.18.28-.71.89-.87 1.07-.16.18-.32.21-.6.07-.28-.14-1.16-.43-2.2-1.37-.81-.72-1.36-1.62-1.52-1.89-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.46-.62-.47h-.53c-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.28 0 1.35.98 2.65 1.12 2.84.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.63-.67 1.86-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32Z" />

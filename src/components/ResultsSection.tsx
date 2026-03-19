@@ -9,7 +9,7 @@ const stats = [
 ];
 
 const ResultsSection = () => (
-  <section id="results" className="py-24 section-alt">
+  <section id="results" className="bg-white py-24">
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16">

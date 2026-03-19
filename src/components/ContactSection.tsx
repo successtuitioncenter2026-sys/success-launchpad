@@ -36,8 +36,8 @@ const ContactSection = () => (
               rel={c.title === "Visit Us" || c.title === "WhatsApp" ? "noopener noreferrer" : undefined}
               className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col items-center text-center gap-3 block"
             >
-              <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center">
-                <c.icon className="h-7 w-7 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center">
+                <c.icon className="h-7 w-7 text-primary" />
               </div>
               <h3 className="font-bold text-foreground">{c.title}</h3>
               <p className="text-sm text-muted-foreground">{c.detail}</p>

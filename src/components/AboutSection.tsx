@@ -12,7 +12,7 @@ const features = [
 const nearbyAreas = ["Katpadi", "Sri Balaji Nagar", "Vellore", "Nearby Katpadi Areas"];
 
 const AboutSection = () => (
-  <section id="about" className="py-24 section-alt">
+  <section id="about" className="bg-white py-24">
     <div className="container mx-auto px-4">
       <ScrollReveal>
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-6">
@@ -39,8 +39,8 @@ const AboutSection = () => (
         {features.map((f, i) => (
           <ScrollReveal key={f.label} delay={i * 0.1}>
             <div className="glass-card glass-card-hover rounded-2xl p-6 text-center flex flex-col items-center gap-3">
-              <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center">
-                <f.icon className="h-7 w-7 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center">
+                <f.icon className="h-7 w-7 text-primary" />
               </div>
               <span className="text-sm font-semibold text-foreground">{f.label}</span>
             </div>

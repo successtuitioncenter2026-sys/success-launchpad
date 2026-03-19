@@ -10,11 +10,12 @@ import WhySucceedSection from "@/components/WhySucceedSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import DemoFormSection from "@/components/DemoFormSection";
 import FAQSection from "@/components/FAQSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import adImage from "@/assets/ad image.jpeg";
 import successLoader from "@/assets/successload.png";
+import successLogo from "@/assets/successlogo.png";
+import successSlogan from "@/assets/successlogan.png";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -55,9 +56,9 @@ const Index = () => {
               <motion.div
                 animate={{ scale: [1, 1.04, 1], opacity: [0.92, 1, 0.92] }}
                 transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                className="rounded-[2rem] bg-white/70 p-5 shadow-[0_30px_80px_rgba(33,126,191,0.18)] backdrop-blur-sm"
+                className="p-5"
               >
-                <img src={successLoader} alt="Success Tuition Center loading" className="h-28 w-auto object-contain sm:h-32" />
+                <img src={successLoader} alt="Success loading" className="h-28 w-auto object-contain sm:h-32" />
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
@@ -67,7 +68,8 @@ const Index = () => {
               >
                 <div className="h-full w-full rounded-full bg-[linear-gradient(90deg,#fbbf24,#1d84d6,#53bdf9)]" />
               </motion.div>
-              <p className="mt-5 text-base font-semibold tracking-[0.18em] text-primary/80">SUCCESS TUITION CENTER</p>
+              <img src={successLogo} alt="Success logo" className="mt-6 h-16 w-auto object-contain sm:h-20" />
+              <img src={successSlogan} alt="Success slogan" className="mt-4 h-10 w-auto object-contain sm:h-12" />
             </motion.div>
           </motion.div>
         ) : null}
@@ -85,7 +87,6 @@ const Index = () => {
             <TestimonialsSection />
             <DemoFormSection />
             <FAQSection />
-            <ContactSection />
           </main>
           <Footer />
           <FloatingWhatsApp />
