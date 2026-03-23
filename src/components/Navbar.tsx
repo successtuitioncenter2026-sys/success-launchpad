@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/success tution logobanner.png";
 
 const links = [
@@ -20,72 +20,34 @@ const Navbar = () => {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card"
+      className="fixed left-0 right-0 top-[53px] z-50 glass-card"
     >
-      <div className="container mx-auto flex items-center justify-between px-4 py-3 sm:py-4">
-        <a href="#" className="flex min-w-0 items-center gap-3 hover-lift">
-          <img src={logo} alt="Success Tuition Center logo" className="h-10 w-auto max-w-[240px] object-contain sm:h-12 sm:max-w-none" />
-        </a>
-        <div className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-0.5"
-            >
-              {l.label}
-            </a>
-          ))}
-          <Button variant="cta" size="sm" className="shine-on-hover hover-lift" asChild>
-            <a href="#demo">Enroll Now</a>
-          </Button>
-        </div>
-        <button
-          className="flex h-10 w-10 items-center justify-center rounded-md md:hidden hover:bg-black/5"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-      <div className="border-t border-border/70 bg-slate-900/80 text-white backdrop-blur-sm">
-        <div className="container mx-auto overflow-x-auto px-4 py-2 text-sm">
-          <div className="flex min-w-max items-center gap-4 whitespace-nowrap">
-            <a
-              href="tel:+918807747582"
-              className="flex items-center gap-1.5 text-[13px] font-medium leading-none transition-colors hover:text-[#ffd166] sm:text-[15px]"
-            >
-              <Phone className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
-              <span className="whitespace-nowrap">+91 88077 47582</span>
-            </a>
-            <a
-              href="https://wa.me/918344810357"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[13px] font-medium leading-none transition-colors hover:text-[#ffd166] sm:text-[15px]"
-            >
-              <MessageCircle className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
-              <span className="whitespace-nowrap">+91 83448 10357</span>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61579514131708"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 transition-colors hover:border-[#ffd166] hover:text-[#ffd166] sm:h-10 sm:w-10"
-            >
-              <Facebook className="h-4 w-4" />
-            </a>
-            <a
-              href="https://www.instagram.com/success_tuition_center_katpadi?igsh=OHh5Z3Bpam1sd2Ix"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 transition-colors hover:border-[#ffd166] hover:text-[#ffd166] sm:h-10 sm:w-10"
-            >
-              <Instagram className="h-4 w-4" />
-            </a>
+      <div className="border-t border-border/70">
+        <div className="container mx-auto flex items-center justify-between px-4 py-3 sm:py-4">
+          <a href="#" className="flex min-w-0 items-center gap-3 hover-lift">
+            <img src={logo} alt="Success Tuition Center logo" className="h-10 w-auto max-w-[240px] object-contain sm:h-12 sm:max-w-none" />
+          </a>
+          <div className="hidden md:flex items-center gap-6">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-0.5"
+              >
+                {l.label}
+              </a>
+            ))}
+            <Button variant="cta" size="sm" className="shine-on-hover hover-lift" asChild>
+              <a href="#demo">Enroll Now</a>
+            </Button>
           </div>
+          <button
+            className="flex h-10 w-10 items-center justify-center rounded-md md:hidden hover:bg-black/5"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
       <AnimatePresence>

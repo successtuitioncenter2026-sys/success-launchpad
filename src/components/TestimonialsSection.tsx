@@ -81,12 +81,15 @@ const getInitials = (name: string) =>
 
 const TestimonialsSection = () => {
   const [expandedReviews, setExpandedReviews] = useState<number[]>([]);
+  const [showAllReviews, setShowAllReviews] = useState(false);
 
   const toggleReview = (index: number) => {
     setExpandedReviews((current) =>
       current.includes(index) ? current.filter((item) => item !== index) : [...current, index],
     );
   };
+
+  const visibleReviews = showAllReviews ? reviews : reviews.slice(0, 3);
 
   return (
     <section id="testimonials" className="bg-white py-24">
@@ -103,12 +106,13 @@ const TestimonialsSection = () => {
         </ScrollReveal>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {reviews.map((review, index) => {
-            const isExpanded = expandedReviews.includes(index);
+          {visibleReviews.map((review, index) => {
+            const reviewIndex = reviews.findIndex((item) => item.name === review.name && item.text === review.text);
+            const isExpanded = expandedReviews.includes(reviewIndex);
             const shouldTruncate = review.text.length > 70;
 
             return (
-              <ScrollReveal key={`${review.name}-${index}`}>
+              <ScrollReveal key={`${review.name}-${reviewIndex}`}>
                 <article className="glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
@@ -134,10 +138,10 @@ const TestimonialsSection = () => {
                     {shouldTruncate ? (
                       <button
                         type="button"
-                        onClick={() => toggleReview(index)}
+                        onClick={() => toggleReview(reviewIndex)}
                         className="mt-3 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                       >
-                        {isExpanded ? "Show less" : "Show more"}
+                        {isExpanded ? "Read less" : "Read more"}
                       </button>
                     ) : null}
                   </div>
@@ -146,6 +150,17 @@ const TestimonialsSection = () => {
             );
           })}
         </div>
+        {reviews.length > 3 ? (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllReviews((current) => !current)}
+              className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-primary/90"
+            >
+              {showAllReviews ? "Show fewer reviews" : "Show more reviews"}
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

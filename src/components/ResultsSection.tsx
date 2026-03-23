@@ -1,5 +1,6 @@
 import AnimatedCounter from "./AnimatedCounter";
 import ScrollReveal from "./ScrollReveal";
+import visionImage from "@/assets/vision.jpeg";
 
 const stats = [
   { target: 200, suffix: "+", label: "Students Trained" },
@@ -9,9 +10,24 @@ const stats = [
 ];
 
 const ResultsSection = () => (
-  <section id="results" className="bg-white py-24">
-    <div className="container mx-auto px-4">
+  <section id="results" className="relative overflow-hidden bg-white py-24">
+    <div
+      className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-[0.09]"
+      style={{ backgroundImage: `url(${visionImage})` }}
+      aria-hidden="true"
+    />
+    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.92)_0%,rgba(244,250,255,0.88)_55%,rgba(255,255,255,0.94)_100%)]" aria-hidden="true" />
+    <div className="container relative z-10 mx-auto px-4">
       <ScrollReveal>
+        <div className="mx-auto mb-10 w-[96%] overflow-hidden rounded-[2rem] border border-primary/10 shadow-[0_22px_50px_rgba(36,116,180,0.18)] sm:w-[92%] md:w-[90%]">
+          <img
+            src={visionImage}
+            alt="Vision and achievement at Success Tuition Center"
+            className="h-auto max-h-none w-full bg-[#0e7fcc] object-contain"
+          />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16">
           Our <span className="gradient-text">Results</span> Speak
         </h2>

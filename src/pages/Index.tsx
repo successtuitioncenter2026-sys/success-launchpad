@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
+import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -9,7 +10,6 @@ import ResultsSection from "@/components/ResultsSection";
 import WhySucceedSection from "@/components/WhySucceedSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import DemoFormSection from "@/components/DemoFormSection";
-import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import adImage from "@/assets/ad image.jpeg";
@@ -77,6 +77,7 @@ const Index = () => {
 
       {!showLoader ? (
         <>
+          <TopBar />
           <Navbar />
           <main>
             <HeroSection />
@@ -86,7 +87,6 @@ const Index = () => {
             <WhySucceedSection />
             <TestimonialsSection />
             <DemoFormSection />
-            <FAQSection />
           </main>
           <Footer />
           <FloatingWhatsApp />
