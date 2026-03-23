@@ -97,7 +97,7 @@ const TestimonialsSection = () => {
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-5xl font-extrabold">
-              Real <span className="gradient-text">Reviews</span>
+              <span className="gradient-text">Feedback</span>
             </h2>
             <p className="mt-4 text-base md:text-lg text-muted-foreground">
               Feedback from students and parents who learned with Success Tuition Center.
@@ -105,62 +105,62 @@ const TestimonialsSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleReviews.map((review, index) => {
-            const reviewIndex = reviews.findIndex((item) => item.name === review.name && item.text === review.text);
-            const isExpanded = expandedReviews.includes(reviewIndex);
-            const shouldTruncate = review.text.length > 70;
+        {showAllReviews ? (
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {visibleReviews.map((review) => {
+              const reviewIndex = reviews.findIndex((item) => item.name === review.name && item.text === review.text);
+              const isExpanded = expandedReviews.includes(reviewIndex);
+              const shouldTruncate = review.text.length > 70;
 
-            return (
-              <ScrollReveal key={`${review.name}-${reviewIndex}`}>
-                <article className="glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
-                      {getInitials(review.name)}
+              return (
+                <ScrollReveal key={`${review.name}-${reviewIndex}`}>
+                  <article className="glass-card glass-card-hover rounded-3xl p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_hsl(205_79%_42%_/_0.18)]">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full gradient-bg text-white font-bold flex items-center justify-center shrink-0">
+                        {getInitials(review.name)}
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-bold text-lg leading-tight">{review.name}</h3>
+                        <p className="text-sm text-muted-foreground">{review.meta}</p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="font-bold text-lg leading-tight">{review.name}</h3>
-                      <p className="text-sm text-muted-foreground">{review.meta}</p>
+
+                    <div className="flex items-center gap-1 mt-5">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      <span className="ml-2 text-sm text-muted-foreground">{review.timeAgo}</span>
                     </div>
-                  </div>
 
-                  <div className="flex items-center gap-1 mt-5">
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <Star key={starIndex} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                    <span className="ml-2 text-sm text-muted-foreground">{review.timeAgo}</span>
-                  </div>
-
-                  <div className="mt-5">
-                    <p className={isExpanded ? "text-foreground leading-relaxed" : "truncate text-foreground leading-relaxed"}>
-                      {review.text}
-                    </p>
-                    {shouldTruncate ? (
-                      <button
-                        type="button"
-                        onClick={() => toggleReview(reviewIndex)}
-                        className="mt-3 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                      >
-                        {isExpanded ? "Read less" : "Read more"}
-                      </button>
-                    ) : null}
-                  </div>
-                </article>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-        {reviews.length > 3 ? (
-          <div className="mt-10 flex justify-center">
-            <button
-              type="button"
-              onClick={() => setShowAllReviews((current) => !current)}
-              className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-primary/90"
-            >
-              {showAllReviews ? "Show fewer reviews" : "Show more reviews"}
-            </button>
+                    <div className="mt-5">
+                      <p className={isExpanded ? "text-foreground leading-relaxed" : "truncate text-foreground leading-relaxed"}>
+                        {review.text}
+                      </p>
+                      {shouldTruncate ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleReview(reviewIndex)}
+                          className="mt-3 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                        >
+                          {isExpanded ? "Read less" : "Read more"}
+                        </button>
+                      ) : null}
+                    </div>
+                  </article>
+                </ScrollReveal>
+              );
+            })}
           </div>
         ) : null}
+        <div className="mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAllReviews((current) => !current)}
+            className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-primary/90"
+          >
+            {showAllReviews ? "Hide Feedback" : "Show Feedback"}
+          </button>
+        </div>
       </div>
     </section>
   );

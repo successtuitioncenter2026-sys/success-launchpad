@@ -23,9 +23,9 @@ const Navbar = () => {
       className="fixed left-0 right-0 top-[53px] z-50 glass-card"
     >
       <div className="border-t border-border/70">
-        <div className="container mx-auto flex items-center justify-between px-4 py-3 sm:py-4">
+        <div className="container mx-auto flex items-center justify-between px-4 py-5 sm:py-6">
           <a href="#" className="flex min-w-0 items-center gap-3 hover-lift">
-            <img src={logo} alt="Success Tuition Center logo" className="h-10 w-auto max-w-[240px] object-contain sm:h-12 sm:max-w-none" />
+            <img src={logo} alt="Success Tuition Center logo" className="h-14 w-auto max-w-[280px] object-contain sm:h-16 sm:max-w-none" />
           </a>
           <div className="hidden md:flex items-center gap-6">
             {links.map((l) => (

@@ -16,6 +16,7 @@ import adImage from "@/assets/ad image.jpeg";
 import successLoader from "@/assets/successload.png";
 import successLogo from "@/assets/successlogo.png";
 import successSlogan from "@/assets/successlogan.png";
+import tuitionImage from "@/assets/tution.png";
 
 const Index = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -69,6 +70,7 @@ const Index = () => {
                 <div className="h-full w-full rounded-full bg-[linear-gradient(90deg,#fbbf24,#1d84d6,#53bdf9)]" />
               </motion.div>
               <img src={successLogo} alt="Success logo" className="mt-6 h-16 w-auto object-contain sm:h-20" />
+              <img src={tuitionImage} alt="Success tuition" className="mt-4 h-16 w-auto object-contain sm:h-20" />
               <img src={successSlogan} alt="Success slogan" className="mt-4 h-10 w-auto object-contain sm:h-12" />
             </motion.div>
           </motion.div>
@@ -79,6 +81,17 @@ const Index = () => {
         <>
           <TopBar />
           <Navbar />
+          <div
+            aria-hidden="true"
+            className="fixed right-0 top-1/2 z-[95] flex h-[220px] w-[58px] -translate-y-1/2 items-center justify-center rounded-l-[1.4rem] bg-[#2b2e87] px-2 text-white shadow-[0_20px_40px_rgba(21,28,87,0.35)] sm:h-[270px] sm:w-[70px]"
+          >
+            <span
+              className="font-display text-[0.72rem] font-bold uppercase tracking-[0.1em] sm:text-[0.9rem]"
+              style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+            >
+              Admission Open 2026-2027
+            </span>
+          </div>
           <main>
             <HeroSection />
             <AboutSection />

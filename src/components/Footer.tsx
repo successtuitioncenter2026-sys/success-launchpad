@@ -15,8 +15,8 @@ const Footer = () => (
     <div className="container mx-auto px-4 py-16 md:py-20">
       <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr_1.15fr] lg:items-start">
         <div className="flex justify-center lg:justify-start">
-          <div className="max-w-[300px] text-center lg:text-left">
-            <img src={logo} alt="Success Tuition Center logo" className="mx-auto h-28 w-auto object-contain lg:mx-0 lg:h-32" />
+          <div className="max-w-[340px] text-center lg:text-left">
+            <img src={logo} alt="Success Tuition Center logo" className="mx-auto h-32 w-auto object-contain lg:mx-0 lg:h-36" />
             <p className="mt-5 text-sm leading-7 text-muted-foreground">
               Success Tuition Center supports students from Class 6 to 12 with focused coaching, regular tests,
               and strong board exam preparation in Katpadi, Vellore.

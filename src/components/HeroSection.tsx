@@ -51,7 +51,7 @@ const HeroSection = () => (
             ].map((item, index) => (
               <div
                 key={item.label}
-                className={`tilt-layer rounded-2xl px-5 py-7 md:px-6 ${index < 2 ? "sm:border-r-4 sm:border-white" : ""}`}
+                className={`tilt-layer rounded-2xl px-5 py-7 md:px-6 ${index < 2 ? "sm:border-r sm:border-white" : ""}`}
               >
                 <p className="font-outfit-bold text-5xl font-extrabold text-white md:text-6xl">{item.value}</p>
                 <p className="mt-3 text-lg text-white/85 md:text-xl">{item.label}</p>

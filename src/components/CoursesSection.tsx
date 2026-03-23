@@ -7,19 +7,19 @@ const courses = [
     icon: BookOpen,
     title: "Class 6-8 Foundation",
     desc: "Strong basics across core school subjects with clear explanations, steady practice, and a rock-solid academic foundation for the future.",
-    subjects: ["Mathematics", "English", "Tamil", "All Subjects"],
+    subjects: ["Mathematics", "English", "All Subjects"],
   },
   {
     icon: GraduationCap,
     title: "Class 9-10 Board Prep",
     desc: "Concept mastery, exam strategies, and model tests across key board subjects to help students score with confidence.",
-    subjects: ["Mathematics", "Physics", "Chemistry", "Biology", "English", "Tamil","All Subjects"],
+    subjects: ["Mathematics", "Physics", "Chemistry", "All Subjects"],
   },
   {
     icon: Atom,
     title: "Class 11-12 Advanced",
     desc: "Deep subject understanding for higher secondary exams with focused coaching for science and commerce students.",
-    subjects: ["Mathematics", "Physics", "Chemistry", "Biology", "Computer Science","All Subjects"],
+    subjects: ["Mathematics", "Physics", "Chemistry", "All Subjects"],
   },
 ];
 
