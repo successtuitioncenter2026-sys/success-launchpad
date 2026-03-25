@@ -9,7 +9,6 @@ const links = [
   { label: "Courses", href: "#courses" },
   { label: "Results", href: "#results" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
