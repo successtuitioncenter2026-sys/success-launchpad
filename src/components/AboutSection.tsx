@@ -6,8 +6,6 @@ import whyChooseUs1 from "@/assets/whychooseus1.jpeg";
 import whyChooseUs2 from "@/assets/whychooseus2.jpeg";
 import whyChooseUs3 from "@/assets/whychooseus3.jpeg";
 
-const nearbyAreas = ["Katpadi", "Sri Balaji Nagar", "Vellore", "Nearby Katpadi Areas"];
-
 const slides = [
   {
     src: whyChooseUs1,
@@ -53,22 +51,6 @@ const AboutSection = () => {
             Why Choose <span className="gradient-text">Success Tuition Center?</span>
           </h2>
         </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <p className="mx-auto mb-8 max-w-4xl text-center text-lg leading-relaxed text-muted-foreground">
-            Success Tuition Center in Katpadi, Vellore supports Class 6 to Class 12 students with strong academic foundations,
-            concept clarity, regular tests, and board exam preparation. We focus on maths, science, and school subject support for
-            students from Katpadi and nearby locations who need consistent guidance and better results.
-          </p>
-        </ScrollReveal>
-        <ScrollReveal delay={0.15}>
-          <div className="mb-10 flex flex-wrap justify-center gap-3">
-            {nearbyAreas.map((area) => (
-              <span key={area} className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                Serving Students From {area}
-              </span>
-            ))}
-          </div>
-        </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <div className="relative left-1/2 right-1/2 mb-14 w-screen -translate-x-1/2 overflow-hidden border-y border-primary/10 bg-[linear-gradient(135deg,#eef7ff_0%,#ffffff_45%,#eef9ff_100%)] px-0 py-3 shadow-[0_28px_60px_rgba(26,105,167,0.16)]">
             <div className="relative min-h-[280px] overflow-hidden bg-slate-100 md:min-h-[620px]">
@@ -107,17 +89,17 @@ const AboutSection = () => {
         </ScrollReveal>
         <ScrollReveal delay={0.25}>
           <div className="mb-14 bg-white px-3 md:px-8">
-            <div className="grid items-start gap-10 md:grid-cols-[minmax(320px,0.95fr)_minmax(0,1fr)] md:gap-14">
-              <div className="overflow-hidden rounded-[2rem] bg-[#f4f0e8] shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+            <div className="grid items-start gap-10 md:grid-cols-[minmax(320px,0.95fr)_minmax(0,1fr)] md:gap-14 md:auto-rows-fr">
+              <div className="overflow-hidden rounded-[2rem] bg-[#f4f0e8] shadow-[0_20px_50px_rgba(0,0,0,0.08)] md:h-full">
                 <img
                   src={teacherImage}
                   alt="Trainer Nethra Santhosh Kumar"
-                  className="h-[360px] w-full object-cover object-top sm:h-[460px] md:h-[620px]"
+                  className="h-[360px] w-full object-cover object-top sm:h-[460px] md:h-full"
                 />
               </div>
               <div className="max-w-[620px]">
                 <p className="text-2xl italic text-black md:text-[2rem]">Our Trainer</p>
-                <h3 className="mt-4 text-[2.45rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-black sm:text-6xl md:text-[4.1rem]">
+                <h3 className="mt-4 text-[2.45rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-[#b8232d] sm:text-6xl md:text-[4.1rem]">
                   Nethra Santhosh Kumar
                 </h3>
                 <h4 className="mt-2 text-[2.45rem] font-extrabold leading-[0.98] tracking-[-0.04em] text-[#b8232d] sm:text-6xl md:text-[4.1rem]">
@@ -147,6 +129,14 @@ const AboutSection = () => {
                 <p className="mt-4 max-w-[38rem] text-lg leading-[1.75] text-black md:text-[1.15rem]">
                   Her teaching approach combines personal attention, regular practice, doubt-clearing, and exam-oriented
                   preparation, helping every student progress at the right pace with confidence.
+                </p>
+                <p className="mt-4 max-w-[38rem] text-lg leading-[1.75] text-black md:text-[1.15rem]">
+                  Students benefit from a calm and motivating classroom environment where every lesson is explained clearly, every
+                  doubt is addressed with care, and every learner is encouraged to stay consistent in their studies.
+                </p>
+                <p className="mt-4 max-w-[38rem] text-lg leading-[1.75] text-black md:text-[1.15rem]">
+                  From daily school support to board exam readiness, her goal is to help students strengthen fundamentals, build
+                  discipline, and achieve better academic performance with steady guidance throughout the year.
                 </p>
               </div>
             </div>

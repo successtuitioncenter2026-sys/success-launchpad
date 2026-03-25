@@ -56,7 +56,7 @@ const DemoFormSection = () => {
                 className="w-full h-10 rounded-md border border-input bg-background/80 px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               >
                 <option value="">Subject Interested</option>
-                {["Mathematics", "Physics", "Chemistry", "Biology", "Commerce"].map((s) => <option key={s} value={s}>{s}</option>)}
+                {["Mathematics", "Physics", "Chemistry", "Biology", "All Subjects"].map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
               <Button variant="cta" size="lg" type="submit" className="w-full">
                 Book Free Demo Class

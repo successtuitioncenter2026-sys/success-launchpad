@@ -57,9 +57,9 @@ const Index = () => {
               <motion.div
                 animate={{ scale: [1, 1.04, 1], opacity: [0.92, 1, 0.92] }}
                 transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                className="p-5"
+                className="p-2"
               >
-                <img src={successLoader} alt="Success loading" className="h-28 w-auto object-contain sm:h-32" />
+                <img src={successLoader} alt="Success loading" className="h-40 w-auto object-contain sm:h-48" />
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
@@ -70,7 +70,7 @@ const Index = () => {
                 <div className="h-full w-full rounded-full bg-[linear-gradient(90deg,#fbbf24,#1d84d6,#53bdf9)]" />
               </motion.div>
               <img src={successLogo} alt="Success logo" className="mt-6 h-16 w-auto object-contain sm:h-20" />
-              <img src={tuitionImage} alt="Success tuition" className="mt-4 h-16 w-auto object-contain sm:h-20" />
+              <img src={tuitionImage} alt="Success tuition" className="mt-4 h-auto w-[22rem] max-w-[78vw] object-contain sm:w-[28rem]" />
               <img src={successSlogan} alt="Success slogan" className="mt-4 h-10 w-auto object-contain sm:h-12" />
             </motion.div>
           </motion.div>
@@ -83,7 +83,7 @@ const Index = () => {
           <Navbar />
           <div
             aria-hidden="true"
-            className="fixed right-0 top-1/2 z-[95] flex h-[220px] w-[58px] -translate-y-1/2 items-center justify-center rounded-l-[1.4rem] bg-[#2b2e87] px-2 text-white shadow-[0_20px_40px_rgba(21,28,87,0.35)] sm:h-[270px] sm:w-[70px]"
+            className="fixed right-0 top-1/2 z-[95] flex h-[220px] w-[58px] -translate-y-1/2 items-center justify-center rounded-l-[1.4rem] bg-[linear-gradient(180deg,#53bdf9_0%,#1d84d6_52%,#0f5ea8_100%)] px-2 text-white shadow-[0_20px_40px_rgba(29,132,214,0.35)] sm:h-[270px] sm:w-[70px]"
           >
             <span
               className="font-display text-[0.72rem] font-bold uppercase tracking-[0.1em] sm:text-[0.9rem]"

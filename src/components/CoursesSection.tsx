@@ -18,7 +18,7 @@ const courses = [
   {
     icon: Atom,
     title: "Class 11-12 Advanced",
-    desc: "Deep subject understanding for higher secondary exams with focused coaching for science and commerce students.",
+    desc: "Deep subject understanding for higher secondary exams with focused coaching across advanced school subjects.",
     subjects: ["Mathematics", "Physics", "Chemistry", "All Subjects"],
   },
 ];
